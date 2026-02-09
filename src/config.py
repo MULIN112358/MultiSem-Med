@@ -1,0 +1,16 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--Test", type=bool, default=False, help="test mode")
+parser.add_argument("--model_name", type=str, default='MultiSem-Med', help="model name")
+parser.add_argument("--resume_path", type=str, default='')
+parser.add_argument("--ddi", action="store_true", default=True, help="using ddi")
+parser.add_argument("--lr", type=float, default=1e-4, help="learning rate")
+parser.add_argument("--target_ddi", type=float, default=0.06, help="target ddi")
+parser.add_argument("--T", type=float, default=2.0, help="T")
+parser.add_argument("--decay_weight", type=float, default=0.85, help="decay weight")
+parser.add_argument("--dim", type=int, default=64, help="dimension")
+parser.add_argument('--nhead', type=int, default=8)
+parser.add_argument("--cuda", type=int, default=0, help="which cuda")
+parser.add_argument('--dataset', type=str, default='mimic-iii')
+args = parser.parse_args()
