@@ -147,6 +147,9 @@ def main():
     print("parameters", get_n_params(model))
     optimizer = Adam(list(model.parameters()), lr=args.lr)
 
+    if not os.path.exists(f'../saved/{args.dataset}/{args.model_name}'):
+        os.makedirs(f'../saved/{args.dataset}/{args.model_name}')
+
     history = defaultdict(list)
     best_epoch, best_ja = 0, 0
     EPOCH = 100
